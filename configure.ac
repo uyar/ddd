@@ -329,7 +329,7 @@ dnl
 ddd_termlib=
 AC_ARG_WITH([termlib],
 AS_HELP_STRING([--with-termlib=LIB],
-[terminal library is LIB=mytinfo|ncurses|curses|termcap|terminfo|...]),[
+[terminal library is LIB=mytinfo|tinfo|ncurses|curses|termcap|terminfo|...]),[
  case "${withval}" in
  no)
   AC_MSG_ERROR([A termcap compatible library is necessary.])
@@ -360,7 +360,7 @@ ddd_have_termcap=false
 dnl
 _termlib="${ddd_termlib}"
 if test "x${ddd_termlib}" = x; then
-  _termlib="mytinfo ncurses curses termcap terminfo termlib"
+  _termlib="mytinfo tinfo ncurses curses termcap terminfo termlib"
 fi
 _termlib_path=
 if test x"${ddd_termlib_libraries_path}" != x; then
