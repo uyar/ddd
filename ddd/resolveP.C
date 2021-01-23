@@ -111,6 +111,8 @@ string resolvePath(const string& file, bool include_user)
 	    prefixes += prefix + "/" ddd_NAME "-" DDD_VERSION;
 	    prefixes += prefix + "/" ddd_NAME;
 	}
+	prefixes += "/usr/share/common-licenses";
+	prefixes += "/usr/share/doc/ddd";
     }
 
     StatusDelay delay("Searching " + quote(file));

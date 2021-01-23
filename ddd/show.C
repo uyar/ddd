@@ -560,7 +560,7 @@ int ddd_license(std::ostream& os)
 
     return uncompress(os, COPYING, sizeof(COPYING) - 1);
 #else
-    const string s1 = resolvePath("COPYING"); 
+    const string s1 = resolvePath("GPL-3"); 
     std::ifstream is(s1.chars());
     if (is.bad())
 	return 1;
