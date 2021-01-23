@@ -1044,6 +1044,11 @@ AC_DEFINE(WITH_BUILTIN_VSLLIB,1,
 [Define if you want the DDD VSL library to be compiled into DDD.])
 fi
 dnl
+AC_ARG_WITH(userinfo,
+AS_HELP_STRING([--with-userinfo=USERINFO],[builder info to display in the About dialog]),
+	USERINFO="$withval", USERINFO="")
+AC_SUBST(USERINFO)
+dnl
 dnl Check for risky LessTif versions.
 dnl
 risky_lesstif=false

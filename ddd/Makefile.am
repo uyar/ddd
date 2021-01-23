@@ -899,9 +899,15 @@ configinfo.C: USERINFO.txt $(srcdir)/config-info
 
 
 # If `~/.ddd_userinfo' exists, use this file as personal identification.
-USERINFO.txt: userinfo$(EXEEXT)
-	-(cat $$HOME/.ddd_userinfo 2> /dev/null || \
-	./userinfo || echo '(unknown)') > $@~ && $(MV) $@~ $@
+USERINFO.txt:
+	-if test "x$(USERINFO)" != "x"; then \
+		echo "$(USERINFO)"; \
+	elif test -f $$HOME/.ddd_userinfo; then \
+		cat $$HOME/.ddd_userinfo; \
+	else \
+		$(MAKE) userinfo$(EXEEXT); \
+		./userinfo || echo '(unknown)'; \
+	fi > $@~ && $(MV) $@~ $@
 	@$(ECHO) ""
 	@$(ECHO) "Please check your name and e-mail address:"
 	@$(ECHO) ""
