@@ -296,7 +296,7 @@
 ! then $EDITOR, then VI.
 @Ddd@*editCommand: \
 ${XEDITOR-false} +@LINE@ @FILE@ \
-|| @XTERM@ -e ${EDITOR-vi} +@LINE@ @FILE@
+|| @XTERM@ -e sensible-editor +@LINE@ @FILE@
 
 
 ! A command to get a core dump of a running process (typically, `gcore')
