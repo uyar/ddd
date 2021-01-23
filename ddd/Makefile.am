@@ -49,8 +49,8 @@ SUFFIXES = .C .c .Y .L .txt .xbm .xbmxx .xpm .xpmxx \
 	   .xface .fig .eps .jpg .png .gif .pdf $(IMGEXT) $(IMGEXT2)
 
 # Shared data installation
-dddrootdir    = $(pkgdatadir)-$(VERSION)
-dddappdir     = $(pkgdatadir)-$(VERSION)/$(ddd)
+altdddrootdir = $(pkgdatadir)-$(VERSION)
+dddappdir     = $(pkgdatadir)/$(ddd)
 
 
 # -----------------------------------------------------------------------------
@@ -2031,8 +2031,8 @@ host.h: $(srcdir)/host.h.in $(top_builddir)/config.status
 	    $(DELETE_CR) > $@~ && $(MV) $@~ $@
 root.h: $(srcdir)/root.h.in $(top_builddir)/config.status
 	$(CAT) $(srcdir)/root.h.in | \
-	$(SED) "s%@ROOT@%$(dddrootdir)%" | \
-	$(SED) "s%@ALT_ROOT@%$(pkgdatadir)%" | \
+	$(SED) "s%@ROOT@%$(pkgdatadir)%" | \
+	$(SED) "s%@ALT_ROOT@%$(altdddrootdir)%" | \
 	    $(DELETE_CR) > $@~ && $(MV) $@~ $@
 
 

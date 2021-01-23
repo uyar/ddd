@@ -37,7 +37,7 @@ dddrootdir   = $(pkgdatadir)-@VERSION@
 # DDD themes.
 # -----------------------------------------------------------------------------
 
-themesrootdir = $(dddrootdir)/themes
+themesrootdir = $(pkgdatadir)/themes
 themesroot_DATA = 	\
 	green.vsl 	\
 	red.vsl 	\

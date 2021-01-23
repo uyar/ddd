@@ -36,7 +36,7 @@ dddrootdir   = $(pkgdatadir)-@VERSION@
 # VSL files.
 # -----------------------------------------------------------------------------
 
-vslrootdir = $(dddrootdir)/vsllib
+vslrootdir = $(pkgdatadir)/vsllib
 vslroot_DATA = \
 	arcs.vsl      \
 	builtin.vsl   \
